@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Landing Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}">
+</head>
+<body>
+    <div class="image-container1">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Landing Image">
+    </div>
+    {% if predicted_label  %}
+        <p class="pred">Our model predicts that there is a {{percentage}}% change you are having a baby:</p>
+        <p class="girl">{{predicted_label.capitalize()}}</p>
+        <p class="pred">Congratulations !</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}">
+        <button class="button_girl">Return to Main Page</button>
+    </a>
+    <script src="{{ url_for('static', filename='JS/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Landing Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}">
+</head>
+<body>
+    <div class="image-container1">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Landing Image">
+    </div>
+    <div class="content">
+        <h1>Do you want to confirm the gender of your baby by using our artificial intelligence model?</h1>
+        <h2>How does it work?</h2>
+    </div>
+    <div class="image-container2">
+        <div class="image-item">
+            <img src="{{ url_for('static', filename='img2.jpg') }}" alt="Image1">
+            <a class='ref' href="https://www.freepik.com/free-vector/doctor-doing-ultrasound-scan-pregnant-woman_38518985.htm">Image by brgfx on Freepik</a>
+            <p>Ask your sonographer or doctor to take a picture of your baby's genitalia in the axial position during your 20 weeks scan</p>
+        </div>
+        <div class="image-item">
+            <img src="{{ url_for('static', filename='img3.jpg') }}" alt="Image2">
+            <a class='ref' href="https://www.freepik.com/free-photo/privacy-policy-information-principle-strategy-rules-concept_17433844.htm#query=cropping%20confidential%20information%20in%20a%20image&position=3&from_view=search&track=ais">Image by rawpixel.com on Freepik</a>
+            <p>Take a picture with your phone and make sure you cut any personal information such as your name or you date of birth. This is usually located at the top of the image. <a href="https://www.youtube.com/watch?v=7JWPQGwfyR4&ab_channel=LoFiAlpaca">Watch this video</a></p>
+        </div>
+        <div class="image-item">
+            <img src="{{ url_for('static', filename='img4.jpg') }}" alt="Image3">
+            <a class='ref' href="https://www.freepik.com/free-vector/flat-gender-reveal-party-concept_16144627.htm#query=boy%20or%20girl&position=2&from_view=search&track=ais">Image by Freepik</a>
+            <p>Upload the picture below and confirm your baby's gender</p>
+        </div>
+    </div>
+    <form class="upload" action="/" method="post" enctype="multipart/form-data">
+        <input class=button1 type="file" name="photo_input" accept="image/*">
+        <button class="button2" type="submit">Find out the gender</button>
+    </form>
+
+    {% if predicted_label  %}
+        <p>Our model predicts that there is a {{percentage}}% change you are having a baby {{predicted_label}}</p>
+    {% endif %}
+
+    <script src="{{ url_for('static', filename='JS/script.js') }}"></script>
+</body>
+</html>
