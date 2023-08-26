@@ -1,5 +1,0 @@
-Flask==2.2.2
-Pillow==10.0.0
-https://download.pytorch.org/whl/cpu/torch-2.0.1%2Bcpu-cp311-cp311-win_amd64.whl
-https://download.pytorch.org/whl/cpu/torchvision-0.15.2%2Bcpu-cp311-cp311-win_amd64.whl
-
