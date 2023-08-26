@@ -1,0 +1,4 @@
+.idea/
+model.pth/
+torchmodel.py/
+venv/
